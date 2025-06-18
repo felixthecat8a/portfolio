@@ -1,4 +1,31 @@
+# Node Modules
+node_modules/
+.yarn/
+
+# Logs and debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+*.editorconfig.bak
+cspell.json.bak
+
+# Sass cache
 .sass-cache/
 *.css.map
 *.sass.map
 *.scss.map
+
+# Build output
+dist/
+*.css
+
+# Temp files
+*.tmp
+*.swp
