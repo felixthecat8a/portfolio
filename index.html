@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./favicon/favicon.ico" type="image/x-icon">
+  <title>Felix Ochoa</title>
+  <link rel="stylesheet" href="dist/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="branding">
+        <h1>Felix Ochoa</h1>
+        <p>Educator | Applied Engineering • Robotics • Engineering Design</p>
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="#about-section">About</a></li>
+          <li><a href="#projects-section">Projects</a></li>
+          <li><a href="#skills-section">Skills</a></li>
+          <li><a href="#contact-section">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="about-section">
+      <h2>About Me</h2>
+      <article id="about-article">
+        <p>
+          Hi! I'm Felix, a technology/mathematics teacher with over eighteen years of experience and a degree in Electrical Engineering.
+          I specialize in bringing STEM education to life through robotics, engineering design, and hands-on problem solving.
+          I love working on Arduino projects and empowering students to build cool things from scratch.
+        </p>
+      </article>
+    </section>
+
+    <section id="projects-section">
+      <h2>Favorite Projects</h2>
+
+      <div class="project-card" id="project-arduino-library">
+        <h3>LCD_BacklightRGB Arduino Library</h3>
+        <p>I created a lightweight Arduino library for controlling RGB backlight LCDs that use 18 pins.</p>
+        <p>
+          It simplifies color management, brightness control, and includes predefined color presets for cleaner code.
+          Built for use in STEM and robotics projects where visual feedback matters.
+        </p>
+        <p><strong>Tech used:</strong> <code>Arduino, C++</code></p>
+        <a class="button-success" href="https://github.com/felixthecat8a/LCD_BacklightRGB" target="_blank">View GitHub Repo</a>
+        <a class="button-info" href="https://docs.arduino.cc/libraries/lcd_backlightrgb/" target="_blank">View Arduino Library</a>
+      </div>
+
+      <div class="project-card" id="project-arduino-rest-api-server">
+        <h3>Arduino RP2040 RESTful Weather Server</h3>
+        <p>
+          Use an Arduino Nano to read real-time temperature and humidity data from a sensor.
+          The readings are served as JSON through a RESTful API using the onboard Wi-Fi module.
+          It includes serial monitoring for debugging and is designed to be easily consumed by JavaScript-based frontends.
+        </p>
+        <p><strong>Equipment used:</strong> <code>Arduino Nano RP2040 Connect, AHT20 sensor</code></p>
+        <p><strong>Tech used:</strong> <code>Arduino, C++, WiFiNINA, ArduinoJson, JavaScript, HTML, CSS</code></p>
+        <a class="button-primary" href="https://docs.arduino.cc/libraries/wifinina/" target="_blank">WiFiNINA</a>
+        <a class="button-secondary" href="https://docs.arduino.cc/libraries/arduinojson/" target="_blank">ArduinoJson</a>
+      </div>
+
+      <div class="project-card" id="project-arduino-johnny-five">
+        <h3>Web-Controlled RGB LED</h3>
+        <p>
+          Make a full-stack interactive project using Arduino and a Node.js backend.
+          The Arduino runs Firmata and connects to the server via USB, allowing a web page to control an RGB LED in real time using Socket.IO.
+        </p>
+        <p><strong>Tech used:</strong> <code>Arduino, C++, Johnny-Five, Firmata, Express.js, Socket.IO, JavaScript, HTML, CSS</code></p>
+        <a href="https://johnny-five.io/" target="_blank" rel="noopener noreferrer" class="button-warning">Visit Johnny-Five</a>
+        <a href="https://socket.io/" target="_blank" rel="noopener noreferrer" class="button-primary">Visit Socket.IO</a>
+        <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer" class="button-secondary">Visit Express.js</a>
+      </div>
+    </section>
+
+    <section id="skills-section">
+      <h2>Skills & Tools</h2>
+      <div class="skills-card">
+        <ul>
+          <li><strong>Languages:</strong> C++ (Arduino), Python (CircuitPython), JavaScript (Node.js)</li>
+          <li><strong>Web Tech:</strong> HTML, CSS, Sass, Express.js, MongoDB</li>
+          <li><strong>Platforms:</strong> Arduino, Raspberry Pi RP2040</li>
+          <li><strong>Tools:</strong> VS Code, Git, Tinkercad, Fusion 360</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact-section">
+      <h2>Contact</h2>
+      <p>You can find my code and projects on <a href="https://github.com/felixthecat8a" target="_blank">GitHub</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy;2025 felixthecat8a. All rights reserved. | <a href="https://github.com/felixthecat8a" target="_blank">GitHub</a></p>
+  </footer>
+
+  <label class="dark-mode-toggle">
+    <input type="checkbox" id="darkModeCheckbox" class="dark-mode-checkbox">
+    <span id="slider">light</span>
+  </label>
+  <script>
+    const darkModeCheckbox = document.getElementById('darkModeCheckbox');
+    const darkModeText = document.getElementById('slider');
+    if (localStorage.getItem('darkMode') === 'true') {
+      darkModeCheckbox.checked = true;
+      document.body.classList.add('dark-mode');
+      darkModeText.textContent = 'dark'
+    }
+    darkModeCheckbox.addEventListener('change', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', darkModeCheckbox.checked);
+      if (darkModeCheckbox.checked) {
+        darkModeText.textContent = 'dark'
+      } else {
+        darkModeText.textContent = 'light'
+      }
+    });
+  </script>
+
+</body>
+</html>
