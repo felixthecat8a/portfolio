@@ -1,0 +1,14 @@
+{
+  "name": "portfolio",
+  "version": "2.0.0",
+  "main": "index.js",
+  "author": "felixthecat8a",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.89.2"
+  },
+  "scripts": {
+    "sass": "sass ./src/scss:./dist --style=compressed --no-source-map",
+    "style": "sass --watch ./src/scss:./dist"
+  }
+}
