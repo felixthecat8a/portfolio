@@ -29,7 +29,7 @@
     p {
         font-size: inherit;
         font-weight: normal;
-        margin: rem(1) 0;
+        margin: 1rem 0;
         @content;
     }
 }
