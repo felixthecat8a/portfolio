@@ -24,8 +24,7 @@ coverage/
 *.scss.map
 
 # Build output
-dist/
-*.css
+build/
 
 # Temp files
 *.tmp
