@@ -4,7 +4,8 @@
   "language": "en", // language - current active spelling language
   "ignorePaths": [
     "node_modules/**",
-    "coverage/**"
+    "coverage/**",
+    "dist/**"
   ],
   // words - list of words to be always considered correct
   "words": [
