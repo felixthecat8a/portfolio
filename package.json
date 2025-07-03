@@ -8,7 +8,7 @@
     "sass": "^1.89.2"
   },
   "scripts": {
-    "sass": "sass ./src/scss:./build --style=compressed --no-source-map",
-    "style": "sass --watch ./src/scss:./build"
+    "sass": "sass ./src/scss:./build/css --style=compressed --no-source-map",
+    "style": "sass --watch ./src/scss:./build/css"
   }
 }
