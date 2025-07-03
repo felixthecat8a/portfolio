@@ -30,6 +30,7 @@ jobs:
           PAT: ${{ secrets.PAT }}
         run: |
           git config user.name "felixthecat8a"
+          git config user.email "felixthecat8a@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${PAT}@github.com/${{ github.repository }}
           git add dist
           git diff --staged --quiet || git commit -m "chore: update compiled CSS [skip ci]"
