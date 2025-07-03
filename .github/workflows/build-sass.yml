@@ -26,11 +26,6 @@ jobs:
         run: sass src/scss:dist --style=compressed --no-source-map
 
       - name: Commit & Push compiled CSS
-        run: |
-          git config user.name "felixthecat8a"
-          git config user.email "felixthecat8a@users.noreply.github.com"
-          git add dist
-          git commit -m "chore: update compiled CSS "
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.PAT }}
