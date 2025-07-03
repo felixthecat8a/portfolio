@@ -4,11 +4,6 @@ on:
   push:
     branches: [main] # or your default branch
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,10 +25,13 @@ jobs:
       - name: Compile Sass
         run: sass src/scss:dist --style=compressed --no-source-map
 
-      - name: Commit & push compiled CSS
+      - name: Push compiled CSS using PAT
+        env:
+          PAT: ${{ secrets.PAT }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${PAT}@github.com/${{ github.repository }}
           git add dist
           git diff --staged --quiet || git commit -m "chore: update compiled CSS [skip ci]"
-          git push
+          git push origin HEAD:${{ github.ref_name }}
