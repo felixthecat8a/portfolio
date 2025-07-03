@@ -23,7 +23,7 @@ jobs:
         run: npm install -g sass
 
       - name: Compile Sass
-        run: sass src/scss:dist --style=compressed --no-source-map
+        run: sass src/scss:dist/css --style=compressed --no-source-map
 
       - name: Commit & Push compiled CSS
         uses: ad-m/github-push-action@master
