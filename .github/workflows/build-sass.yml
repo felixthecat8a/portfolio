@@ -25,7 +25,7 @@ jobs:
       - name: Compile Sass
         run: sass src/scss:dist --style=compressed --no-source-map
 
-      - name: Push compiled CSS using PAT
+      - name: Commit & Push compiled CSS
         env:
           PAT: ${{ secrets.PAT }}
         run: |
