@@ -26,12 +26,10 @@ jobs:
         run: sass src/scss:dist --style=compressed --no-source-map
 
       - name: Commit & Push compiled CSS
-        env:
-          PAT: ${{ secrets.PAT }}
         run: |
           git config user.name "felixthecat8a"
           git config user.email "felixthecat8a@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${PAT}@github.com/${{ github.repository }}
+          git remote set-url origin "https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}"
           git add dist
           git diff --staged --quiet || git commit -m "chore: update compiled CSS [skip ci]"
           git push origin HEAD:${{ github.ref_name }}
