@@ -29,7 +29,10 @@ jobs:
         run: |
           git config user.name "felixthecat8a"
           git config user.email "felixthecat8a@users.noreply.github.com"
-          git remote set-url origin "https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}"
           git add dist
           git diff --staged --quiet || git commit -m "chore: update compiled CSS [skip ci]"
-          git push origin HEAD:${{ github.ref_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        uses: ad-m/github-push-action@master
+        with:
+          branch: main
