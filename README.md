@@ -46,15 +46,3 @@ sass src/scss:dist/css --style=compressed
 
 - Sass is compiled from `src/scss/` to `dist/css` on push using a GitHub Actions workflow.
 - The compiled CSS is committed back to the repository automatically.
-
----
-
-## Contact
-
-You can find more of my work on [GitHub](https://github.com/felixthecat8a).
-
----
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
