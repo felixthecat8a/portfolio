@@ -1,0 +1,42 @@
+@import '../util/util';
+
+#typograpy {
+  .reset() {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    html {
+      height: 100%;
+    }
+  }
+  .body-styles(@bg: #F1F1F1, @txt: #333) {
+    body {
+      font-family: @font-segoe;
+      line-height: 1.5;
+      font-size: 1.1em;
+      font-weight: 400;
+      height: 100%;
+      width: 100%;
+      background-color: @bg;
+      color: @txt;
+    }
+    #media-lib.medium({
+      body {
+        font-size: 0.9rem;
+      }
+    });
+    #media-lib.small({
+      body {
+        width: 576px;
+      }
+    });
+  }
+}
+
+#typograpy.reset();
+#typograpy.body-styles(@bg-main, @txt-main);

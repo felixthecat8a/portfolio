@@ -1,0 +1,64 @@
+// Font families
+@font-serif: 'Times New Roman', Times, serif;
+@font-sans: Arial, Helvetica, sans-serif;
+@font-segoe: 'Segoe UI', Tahoma, Verdana, sans-serif;
+@font-mono: 'Courier New', 'Lucida Console', Courier, monospace;
+@font-code: 'Geist Mono', Courier, monospace;
+// General Theme Tokens
+@color-dark: #1f1f1f;
+@color-light: #f1f1f1;
+@text-grey: #333;
+// Accent Colors
+@accent-green: #95ff05;
+@accent-blue: #05c7ff;
+@accent-orange: #ff9f05;
+@accent-yellow: #ffe705;
+@accent-pink: #ff4f9f;
+@accent-purple: #b05cff;
+// Header/Footer Colors
+@bg-header: @color-dark;
+@txt-header: @color-light;
+@bg-footer: @color-dark;
+@txt-footer: @color-light;
+@accent-color: @accent-green;
+// Main Colors
+@bg-main: @color-light;
+@txt-main: @text-grey;
+@green-border: #37b501;
+@blue-border: #3489ff;
+@project-card-border: 5px solid @green-border;
+@skills-card-border: 5px solid @blue-border;
+
+@breakpoint-sm: calc(576 / 16 * 1rem);
+@breakpoint-md: calc(768 / 16 * 1rem);
+@breakpoint-lg: calc(992 / 16 * 1rem);
+@breakpoint-xl: calc(1200 / 16 * 1rem);
+@breakpoint-xxl: calc(1400 / 16 * 1rem);
+
+#media-lib {
+  .small(@rules) {
+    @media only screen and (max-width: @breakpoint-sm) {
+      @rules();
+    }
+  }
+  .medium(@rules) {
+    @media only screen and (max-width: @breakpoint-md) {
+      @rules();
+    }
+  }
+  .large(@rules) {
+    @media only screen and (max-width: @breakpoint-lg) {
+      @rules();
+    }
+  }
+  .extra-large(@rules) {
+    @media only screen and (max-width: @breakpoint-xl) {
+      @rules();
+    }
+  }
+  .extra-extra-large(@rules) {
+    @media only screen and (max-width: @breakpoint-xxl) {
+      @rules();
+    }
+  }
+}

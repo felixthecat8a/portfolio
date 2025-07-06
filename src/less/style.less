@@ -1,0 +1,44 @@
+@import './util/util';
+@import './layout/typography';
+@import './layout/layout';
+@import './components/elements';
+@import './components/ui';
+
+body {
+  #text-components.all-heading-styles();
+  .header-style(@bg-header,@txt-header,@accent-color);
+  .main-style({
+    #ui-components.button-styles();
+    #ui-components.data-input-styles();
+    #ui-components.interactive-inputs();
+    #ui-components.form-styles();
+    #text-components.text-elements();
+    #text-components.anchor-styles();
+  });
+  .footer-style(@bg-footer,@txt-footer,@accent-color);
+  .project-card,
+  .skills-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    margin: 1em 0;
+    transition: box-shadow 0.3s ease;
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+  .project-card {
+    border-left: @project-card-border;
+  }
+  .skills-card {
+    border-left: @skills-card-border;
+    ul {
+      margin-left: 16px;
+    }
+  }
+}
+
+@import './theme/dark-mode';
+#dark-mode.dark-mode-settings();
+#dark-mode.dark-mode-toggle-checkbox(0.85rem,#95ef01);

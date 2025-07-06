@@ -1,0 +1,55 @@
+@import '../util/util';
+// Dark Mode  Colors
+@bg-main-dark: @text-grey;
+@txt-main-dark: @color-light;
+
+#dark-mode {
+  .dark-mode-settings {
+    body.dark-mode {
+      background-color: @bg-main-dark;
+      color: @txt-main-dark;
+      main {
+        #text-components.anchor-styles(#cdc, #efe);
+        .project-card,
+        .skills-card {
+          background: rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+  .dark-mode-toggle-checkbox(@size:0.9rem,@color:#95ef01) {
+    label.dark-mode-toggle {
+      font-family: @font-code;
+      font-size: @size;
+      font-weight: 900;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+    }
+    input[type='checkbox'].dark-mode-checkbox {
+      display: none;
+    }
+    #slider {
+      display: inline-block;
+      padding: 2px;
+      background-color: @color;
+      color: #333;
+      border-radius: 20px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      transition:
+        background-color 0.3s,
+        color 0.3s;
+      width: 65px;
+      &:hover {
+        filter: brightness(0.95);
+      }
+    }
+    .dark-mode-toggle input:checked + #slider {
+      background-color: #bbb;
+      color: #222;
+    }
+  }
+}
