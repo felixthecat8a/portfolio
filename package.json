@@ -5,10 +5,13 @@
   "author": "felixthecat8a",
   "license": "MIT",
   "devDependencies": {
+    "less": "^4.3.0",
+    "less-watch-compiler": "^1.16.3",
     "sass": "^1.89.2"
   },
   "scripts": {
     "sass": "sass ./src/scss:./build/css --style=compressed --no-source-map",
-    "style": "sass --watch ./src/scss:./build/css"
+    "less": "lessc src/less/style.less build/css/style.css",
+    "style": "less-watch-compiler src/less build/css style.less"
   }
 }
