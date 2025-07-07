@@ -1,13 +1,13 @@
-name: Compile Sass
+name: Compile Less
 
 on:
   push:
     branches: [main]
     paths:
-      - 'src/scss/**/*.scss'
+      - 'src/less/**/*.less'
   pull_request:
     paths:
-      - 'src/scss/**/*.scss'
+      - 'src/less/**/*.less'
 
 jobs:
   build:
@@ -24,17 +24,24 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Sass globally
-        run: npm install -g sass
+      - name: Install Less
+        run: npm install less
 
-      - name: Compile Sass
-        run: sass src/scss:dist/css --style=compressed --no-source-map
+      - name: Clean old CSS files
+        run: |
+          mkdir -p dist/css
+          rm -f dist/css/*.css
+
+      - name: Compile Less
+        run: npx lessc src/less/style.less dist/css/style.css
 
       - name: Commit & Push compiled CSS
+        env:
+          PAT: ${{ secrets.PAT }}
         run: |
           git config user.name "felixthecat8a"
           git config user.email "felixthecat8a@users.noreply.github.com"
-          git remote set-url origin "https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}"
+          git remote set-url origin "https://x-access-token:${PAT}@github.com/${{ github.repository }}"
           git add dist/css
-          git diff --staged --quiet || git commit -m "chore: update compiled CSS [skip ci]"
+          git diff --staged --quiet || git commit -m "chore: update compiled CSS"
           git push origin HEAD:${{ github.ref_name }}
