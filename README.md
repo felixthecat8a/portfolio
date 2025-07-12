@@ -1,8 +1,8 @@
 # Portfolio
 
-[![GitHub license](https://img.shields.io/github/license/felixthecat8a/portfolio?style=for-the-badge&color=green)](LICENSE)
 [![Less](https://img.shields.io/badge/styled_with-Less-1d365d?style=for-the-badge&logo=less&logoSize=auto&logoColor=white)](https://lesscss.org/)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/felixthecat8a/portfolio/less-compile.yml?style=for-the-badge&logo=github)
+[![GitHub license](https://img.shields.io/github/license/felixthecat8a/portfolio?style=for-the-badge&color=green)](LICENSE)
 
 A personal portfolio site designed and built with HTML, Less, and JavaScript.
 
